@@ -1,0 +1,45 @@
+{
+  "routes": [
+    {
+      "route": "/pricing.html",
+      "redirect": "/dentalcharz.html#proposal",
+      "statusCode": 301
+    },
+    {
+      "route": "/pricing",
+      "redirect": "/dentalcharz.html#proposal",
+      "statusCode": 301
+    },
+    {
+      "route": "/tools/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/README.md",
+      "statusCode": 404
+    },
+    {
+      "route": "/.preview/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/edge-capture/*",
+      "statusCode": 404
+    }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 404
+    }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "DENY",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  },
+  "mimeTypes": {
+    ".svg": "image/svg+xml"
+  }
+}

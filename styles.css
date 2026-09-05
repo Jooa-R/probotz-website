@@ -14,6 +14,8 @@
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Company/product architecture: retain the original palette and components. */
+
 * {
   box-sizing: border-box;
 }
@@ -823,4 +825,93 @@ h3 {
     margin-left: 1.1rem;
     margin-right: 1.1rem;
   }
+}
+
+/* Shared company and product layouts */
+.site-header { grid-template-columns: auto 1fr; }
+.site-nav { justify-content: flex-end; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
+.site-nav a[aria-current="page"] { color: var(--brand-dark); text-decoration: underline; text-underline-offset: 0.5rem; text-decoration-thickness: 2px; }
+.site-nav a { padding-block: 0.6rem; }
+.site-nav .login-link { margin-left: 1rem; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 5px; }
+.final-cta :focus-visible, .flagship-card:focus-visible { outline-color: #b9845a; }
+.skip-link { position: fixed; left: 1rem; top: -100px; z-index: 100; padding: 0.8rem 1rem; background: white; border: 2px solid var(--brand); }
+.skip-link:focus { top: 1rem; }
+[id] { scroll-margin-top: 110px; }
+main:focus { outline: none; }
+figure { margin: 0; }
+figcaption, .small-note { margin-top: 1rem; color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+.company-hero { min-height: 680px; padding-top: 6rem; padding-bottom: 6rem; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
+.company-hero h1 { font-size: clamp(2.8rem, 5.4vw, 5.4rem); line-height: 1.04; max-width: 850px; }
+.company-proof { display: grid; gap: 1rem; }
+.flagship-card { display: block; border-radius: 18px; padding: clamp(1.5rem, 3vw, 3rem); background: var(--brand-dark); color: white; box-shadow: var(--shadow); }
+.flagship-card .eyebrow { color: #d7e7e1; }
+.flagship-card h2 { font-size: clamp(2rem, 3vw, 3rem); }
+.flagship-card p:not(.eyebrow) { color: #d7e7e1; }
+.flagship-card .text-link { color: white; }
+.mini-workflow { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin: 2rem 0; }
+.mini-workflow span { border: 1px solid #73938b; padding: 0.55rem 0.75rem; border-radius: 6px; font-size: 0.85rem; }
+.project-teaser { display: grid; padding: 1.5rem; background: white; border: 1px solid var(--line); border-radius: var(--radius); gap: 0.35rem; }
+.project-teaser .eyebrow { margin-bottom: 0.25rem; }
+.project-teaser strong { font-size: 1.2rem; }
+.project-teaser > span:last-child { color: var(--muted); font-size: 0.9rem; }
+.large-copy { font-size: 1.13rem; color: var(--muted); max-width: 780px; }
+.featured-product { background: var(--soft); border-block: 1px solid var(--line); }
+.featured-product .split-section { grid-template-columns: 1fr 1fr; }
+.work-feature { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 4vw; align-items: center; }
+.project-image img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+.feature-title { font-size: clamp(1.65rem, 2.6vw, 2.5rem); overflow-wrap: anywhere; }
+.text-link, .prose a:not(.button) { color: var(--brand-dark); text-decoration: underline; text-underline-offset: 0.25rem; font-weight: 650; }
+.product-hero { min-height: 630px; }
+.product-hero h1 { font-size: clamp(2.8rem, 5.3vw, 5rem); line-height: 1.04; }
+.status-pill { color: var(--brand-dark); background: var(--soft); border-radius: 999px; padding: 0.4rem 0.75rem; height: fit-content; font-size: 0.8rem; }
+.workflow-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.workflow-cards h3 { font-size: 1.35rem; }
+.workflow-cards .feature-card { padding: 1.7rem; }
+.case-journey { list-style: none; counter-reset: journey; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+.case-journey li { counter-increment: journey; margin: 0; padding: 1rem 0; border-top: 2px solid var(--brand); }
+.case-journey li::before { content: '0' counter(journey); display: block; color: var(--brand); font-size: 0.8rem; margin-bottom: 1rem; }
+.case-journey p { color: var(--muted); margin-top: 0.7rem; }
+.integration-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.integration-grid .contact-box { display: flex; flex-direction: column; align-items: flex-start; }
+.integration-status { margin-top: auto; background: var(--soft); color: var(--brand-dark); border-radius: 99px; font-size: 0.8rem; padding: 0.25rem 0.7rem; }
+.integration-status.development { background: var(--accent-soft); color: #704828; }
+.case-study-image { max-width: 1100px; margin-inline: auto; }
+.case-study-section { padding-top: 2rem; }
+.contact-options { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.contact-options .contact-box { padding: clamp(1.5rem, 3vw, 3rem); }
+.contact-options h2 { font-size: clamp(1.7rem, 3vw, 2.8rem); }
+.contact-status { padding: 1rem; background: var(--soft); border-left: 3px solid var(--brand); font-size: 0.9rem; }
+.company-details { margin-left: 0; padding-top: 0; }
+.prose h2:not(:first-child) { margin-top: 3rem; }
+.error-page { min-height: 65vh; }
+.button { white-space: normal; text-align: center; }
+@media (max-width: 1040px) {
+  .site-header { grid-template-columns: auto auto; min-height: 76px; }
+  .site-nav { display: flex; grid-column: 1 / -1; flex-wrap: wrap; justify-content: flex-start; padding-bottom: 1rem; }
+  .nav-toggle { display: none; }
+  .nav-enhanced .nav-toggle { display: inline-flex; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; justify-self: end; border: 1px solid var(--line); border-radius: 8px; background: white; }
+  .nav-toggle span:not(.sr-only) { width: 18px; height: 2px; background: var(--ink); }
+  .nav-enhanced .site-nav { display: none; }
+  .nav-enhanced.nav-open .site-nav { display: flex; flex-direction: column; align-items: stretch; gap: 0.4rem; max-height: calc(100dvh - 90px); overflow-y: auto; }
+  .site-nav .login-link { margin-left: 0; }
+  .company-hero, .product-hero, .work-feature { grid-template-columns: 1fr; gap: 2.5rem; }
+  .company-proof { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); align-items: start; }
+  .workflow-cards, .integration-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-journey { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .company-hero, .product-hero { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .company-hero h1, .product-hero h1, .subpage-hero h1 { font-size: clamp(2.3rem, 9vw, 3.4rem); line-height: 1.07; }
+  .company-proof, .featured-product .split-section, .contact-options, .workflow-cards, .integration-grid, .case-journey { grid-template-columns: 1fr; }
+  .section { padding-block: 3.5rem; }
+  .subpage-hero { padding-top: 3.5rem; }
+  .product-hero .summary-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .product-hero .case-header-card { grid-template-columns: 1fr; }
+  .site-footer nav a { padding-block: 0.4rem; }
+  .project-teaser strong { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }

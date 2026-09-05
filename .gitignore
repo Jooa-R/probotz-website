@@ -1,0 +1,4 @@
+edge-capture/
+.preview/
+__pycache__/
+node_modules/

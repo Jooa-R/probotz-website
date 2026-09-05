@@ -1,354 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Probotz is a modern dental lab operating platform for cases, files, communication, compliance, shipping, pricing, and invoicing.">
-    <title>Probotz | Dental Lab Operating Platform</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="logo" href="index.html" aria-label="Probotz home">
-        <span class="logo-mark">P</span>
-        <span>Probotz</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Open navigation</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" id="site-nav">
-        <a href="index.html#product">Product</a>
-        <a href="index.html#workflow">How it works</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About</a>
-      </nav>
-      <div class="header-actions">
-        <a class="button button-ghost" href="https://dental.probotz.eu/login">Log in</a>
-        <a class="button button-primary" href="https://dental.probotz.eu/register">Register</a>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Probotz Consultancy Oy | Software around real workflows</title>
+  <meta name="description" content="Probotz is a focused Finnish software company. We build DentalCharz, our flagship dental lab platform, and tailored digital solutions for organisations.">
+  <link rel="canonical" href="https://probotz.eu/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Probotz Consultancy Oy">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Probotz Consultancy Oy | Software around real workflows">
+  <meta property="og:description" content="Probotz is a focused Finnish software company. We build DentalCharz, our flagship dental lab platform, and tailored digital solutions for organisations.">
+  <meta property="og:url" content="https://probotz.eu/">
+  <meta property="og:image" content="https://probotz.eu/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Probotz Consultancy Oy — focused software, built around real work">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#315f58">
 
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Dental lab operations, connected</p>
-          <h1>From impression to invoice, in one workflow</h1>
-          <p class="hero-text">Probotz helps dental labs manage cases, communication, production, compliance, shipping, and invoicing in one connected system.</p>
-          <div class="hero-actions">
-            <a class="button button-primary button-large" href="https://dental.probotz.eu/register">Register</a>
-            <a class="button button-secondary button-large" href="https://dental.probotz.eu/login">Log in</a>
-          </div>
-        </div>
-        <div class="product-visual" aria-label="Product workflow preview">
-          <!-- Case Header Card -->
-          <div class="case-header-card">
-            <div class="case-identity">
-              <div class="patient-ref">Aino K.</div>
-              <div class="case-meta">Case 4827 · Dr. Lund · Nordic Dental Clinic</div>
-              <div class="created-label">Created: May 13, 2026</div>
-            </div>
-            <div class="case-controls">
-              <div class="status-pill">In production</div>
-            </div>
-          </div>
-
-          <!-- Workflow Strip -->
-          <div class="workflow-strip">
-            <span class="step done">Intake</span>
-            <span class="step done">Planning</span>
-            <span class="step active">Production</span>
-            <span class="step">Ready</span>
-            <span class="step">Ship</span>
-            <span class="step">Invoice</span>
-          </div>
-
-          <!-- Summary Tiles Grid -->
-          <div class="summary-tiles">
-            <div class="summary-tile">
-              <div class="tile-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tile-svg">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-              </div>
-              <div class="tile-content">
-                <div class="tile-title">Messages</div>
-                <div class="tile-value">3 unread</div>
-                <div class="tile-subtitle">Latest activity</div>
-              </div>
-            </div>
-            <div class="summary-tile">
-              <div class="tile-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tile-svg">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-              </div>
-              <div class="tile-content">
-                <div class="tile-title">Tooth Chart</div>
-                <div class="tile-value">4 units</div>
-                <div class="tile-subtitle">Planning active</div>
-              </div>
-            </div>
-            <div class="summary-tile">
-              <div class="tile-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tile-svg">
-                  <line x1="12" y1="1" x2="12" y2="23" />
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
-              </div>
-              <div class="tile-content">
-                <div class="tile-title">Price</div>
-                <div class="tile-value">€860</div>
-                <div class="tile-subtitle">Estimate total</div>
-              </div>
-            </div>
-            <div class="summary-tile">
-              <div class="tile-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tile-svg">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              </div>
-              <div class="tile-content">
-                <div class="tile-title">Compliance</div>
-                <div class="tile-value">Ivoclar</div>
-                <div class="tile-subtitle">2 batches</div>
-              </div>
-            </div>
-            <div class="summary-tile">
-              <div class="tile-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tile-svg">
-                  <rect x="1" y="3" width="15" height="13" />
-                  <polygon points="16,8 20,8 23,12 16,12" />
-                  <circle cx="5.5" cy="18.5" r="2.5" />
-                  <circle cx="18.5" cy="18.5" r="2.5" />
-                </svg>
-              </div>
-              <div class="tile-content">
-                <div class="tile-title">Shipments</div>
-                <div class="tile-value">1 batch</div>
-                <div class="tile-subtitle">Label ready</div>
-              </div>
-            </div>
-            <div class="summary-tile">
-              <div class="tile-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tile-svg">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-              </div>
-              <div class="tile-content">
-                <div class="tile-title">Dates</div>
-                <div class="tile-value">14 May</div>
-                <div class="tile-subtitle">Delivery target</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section split-section" id="product">
-        <div>
-          <p class="eyebrow">The operating gap</p>
-          <h2>Replace scattered tools with a single lab workflow</h2>
-        </div>
-        <div class="compare-grid">
-          <article class="compare-card muted-card">
-            <h3>The old way</h3>
-            <ul>
-              <li>Spreadsheets beside long email threads</li>
-              <li>Disconnected clinic portals and file links</li>
-              <li>Missing files, late follow-up, and unclear handoffs</li>
-              <li>Compliance records assembled after the work is done</li>
-            </ul>
-          </article>
-          <article class="compare-card highlight-card">
-            <h3>With Probotz</h3>
-            <ul>
-              <li>One connected case lifecycle</li>
-              <li>Clear statuses, assignments, priorities, and alerts</li>
-              <li>Built-in case chat, production chat, and attachments</li>
-              <li>Compliance, shipping, pricing, and invoicing in the same system</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Capabilities</p>
-          <h2>A connected operating system for modern dental labs</h2>
-          <p>Probotz groups the moving parts of lab operations into calm, readable workflows for teams, clinics, and manufacturing partners.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Case management</h3>
-            <p>Manage dental lab cases, orders, patient references with aliases and duplicate merges, clinic relationships, impressions, scans, product planning, statuses, turnaround rules, and exports.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Communication and collaboration</h3>
-            <p>Keep case chat, production chat, read states, attachments, internal lab notes, and manufacturer-facing notes connected to the work.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Production and fulfilment</h3>
-            <p>Track shippable components, batches, production stages, assignments, materials, line items, priorities, holds, alerts, and late files. Keep outsourced parts and components traceable through the entire workflow.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Compliance and documentation</h3>
-            <p>Prepare certificates and compliance documentation for custom-made medical device workflows with managed manufacturer profiles and multilingual declaration text.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Shipping and logistics</h3>
-            <p>Coordinate shipments for clinics, outsource labs, suppliers, and components, including shipment batches, label PDFs, and Posti integration support.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Pricing and real-time estimates</h3>
-            <p>Show real-time price estimates as orders are configured. Calculate pricing from products, options, and case configuration before invoicing, with support for price lists, clinic-specific assignments, VAT, and payment terms.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Portal branding and access</h3>
-            <p>Configure tenant logos, colors, email sender identity, custom domains, favicon, roles, entitlements, language settings, and managed translations.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Scan and file handling</h3>
-            <p>Store, preview, and manage scan files, 3D models, impressions, and case attachments. Use QR code labels to connect physical work to digital cases, and support structured file handling for scanner-originated data.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Multi-user management and access</h3>
-            <p>Manage team members, clinics, and manufacturer partners with role-based access control, configurable workflows, and secure collaboration across labs and organizations.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section process-section" id="workflow">
-        <div class="section-heading">
-          <p class="eyebrow">How it works</p>
-          <h2>A clear path through every case</h2>
-        </div>
-        <div class="process-grid">
-          <article>
-            <span>1</span>
-            <h3>Receive cases, scans, and impressions</h3>
-            <p>Capture digital or physical intake with clinic, practitioner, patient reference, files, scans, products, and due dates in one place. Get real-time turnaround estimates based on order configuration.</p>
-          </article>
-          <article>
-            <span>2</span>
-            <h3>Coordinate production and communication</h3>
-            <p>Assign work, track statuses, manage alerts, and keep lab, clinic, and manufacturer conversations tied to the case. Use QR code labels to bridge physical work to the digital record.</p>
-          </article>
-          <article>
-            <span>3</span>
-            <h3>Manage components and shipping</h3>
-            <p>Track shippable components and batches through fulfillment. Prepare documentation, labels, QR codes, and logistics records before the case leaves the lab.</p>
-          </article>
-          <article>
-            <span>4</span>
-            <h3>Complete invoicing with traceability</h3>
-            <p>Turn products and line items into invoices with real-time pricing. Access full case history, production records, and component tracking for complete traceability.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section outcomes-section">
-        <div class="section-heading">
-          <p class="eyebrow">Why Probotz</p>
-          <h2>Cleaner coordination, stronger traceability, fewer manual handoffs</h2>
-        </div>
-        <div class="outcome-list">
-          <div><strong>Fewer manual steps</strong><span>Less copying between spreadsheets, inboxes, file storage, portals, and invoicing tools. Connect scans, design files, and production records in one place.</span></div>
-          <div><strong>Clearer communication</strong><span>Teams, clinics, practitioners, and manufacturers see case status, turnaround times, and readiness without chasing updates.</span></div>
-          <div><strong>Better operational control</strong><span>Managers can track priorities, late files, holds, production progress, component fulfillment, and manufacturing partner readiness.</span></div>
-          <div><strong>Stronger traceability</strong><span>QR code labels connect physical work to digital records. Full case history, component tracking, and scan files stay linked through production and logistics.</span></div>
-        </div>
-      </section>
-
-      <section class="section pricing-preview" id="pricing">
-        <div class="section-heading">
-          <p class="eyebrow">Pricing</p>
-          <h2>Plans for labs at different stages</h2>
-          <p>Start with the workflows your lab needs now, then expand into advanced coordination, integrations, and multi-tenant operations.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card">
-            <h3>Starter</h3>
-            <p class="price">Contact us</p>
-            <p>For labs moving away from spreadsheets and disconnected intake.</p>
-            <ul>
-              <li>Core case management</li>
-              <li>Clinic portal and file access</li>
-              <li>Scan storage and chat</li>
-            </ul>
-            <a class="button button-secondary" href="contact.html">Contact us</a>
-          </article>
-          <article class="price-card featured-price">
-            <h3>Professional</h3>
-            <p class="price">Contact us</p>
-            <p>For growing labs that need operational control across production, fulfillment, and pricing.</p>
-            <ul>
-              <li>Production stages and alerts</li>
-              <li>Real-time price estimates</li>
-              <li>Component tracking and shipping workflows</li>
-            </ul>
-            <a class="button button-primary" href="https://dental.probotz.eu/register">Register</a>
-          </article>
-          <article class="price-card">
-            <h3>Enterprise</h3>
-            <p class="price">Custom</p>
-            <p>For multi-site labs, manufacturers, and advanced partner portal requirements.</p>
-            <ul>
-              <li>Custom domains and branding</li>
-              <li>Role-based access control</li>
-              <li>Integration and onboarding support</li>
-            </ul>
-            <a class="button button-secondary" href="contact.html">Contact us</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section about-band" id="about">
-        <div>
-          <p class="eyebrow">About Probotz</p>
-          <h2>Built for real dental lab operations</h2>
-        </div>
-        <p>Probotz is not generic workflow software dressed up for healthcare. It is shaped around the realities of dental lab work: clinical intake from scans and impressions, patient references, tooth and product planning, production stages, component fulfillment, turnaround time calculation from order configuration, manufacturer coordination, compliance documentation, QR code labels for physical work tracking, logistics, pricing, and invoices that need to match the work completed.</p>
-      </section>
-
-      <section class="final-cta">
-        <p class="eyebrow">Ready when your lab is</p>
-        <h2>Bring scans, impressions, production, shipping, and invoicing into one connected workflow.</h2>
-        <div class="hero-actions">
-          <a class="button button-primary button-large" href="https://dental.probotz.eu/register">Register</a>
-          <a class="button button-secondary button-large" href="https://dental.probotz.eu/login">Log in</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>
-        <a class="logo footer-logo" href="index.html">
-          <span class="logo-mark">P</span>
-          <span>Probotz</span>
-        </a>
-        <p>Modern dental lab operations, from scans and impressions to invoice.</p>
-      </div>
-      <nav>
-        <a href="index.html#product">Product</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://dental.probotz.eu/login">Log in</a>
-        <a href="https://dental.probotz.eu/register">Register</a>
-      </nav>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://probotz.eu/#organisation", "name": "Probotz Consultancy Oy", "url": "https://probotz.eu/", "logo": "https://probotz.eu/assets/apple-touch-icon.png", "location": {"@type": "Country", "name": "Finland"}}</script>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="Probotz home"><span class="logo-mark" aria-hidden="true">P</span><span>Probotz</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open navigation</span><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="/index.html" aria-current="page">Home</a><a href="/dentalcharz.html">DentalCharz</a><a href="/work.html">Work</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a class="button button-ghost login-link" href="https://dental.probotz.eu/login">DentalCharz login</a></nav>
+  </header>
+  <main id="main" tabindex="-1"><section class="hero company-hero"><div class="hero-copy"><p class="eyebrow">Probotz Consultancy Oy · Finland</p><h1>When the workflow doesn't fit the tool.</h1><p class="hero-text">We build software around the way work actually happens. Focused products, connected systems and digital services that make complicated tasks clearer.</p><div class="hero-actions"><a class="button button-primary button-large" href="/dentalcharz.html">Explore DentalCharz</a><a class="button button-secondary button-large" href="/contact.html#project">Discuss a project</a></div></div><aside class="company-proof" aria-label="What Probotz builds"><a class="flagship-card" href="/dentalcharz.html"><p class="eyebrow">Our flagship product</p><h2>DentalCharz</h2><p>A connected operating platform for dental laboratories.</p><div class="mini-workflow" aria-hidden="true"><span>Intake</span><span>Production</span><span>Fulfilment</span><span>Invoice</span></div><span class="text-link">Explore the product →</span></a><a class="project-teaser" href="/work.html#falcon"><span class="eyebrow">Customer work</span><strong>Jousiammuntaseura Falcon</strong><span>A clearer home for an established archery club. <span aria-hidden="true">↗</span></span></a></aside></section><section class="section split-section" id="what-we-build"><div><p class="eyebrow">What we build</p><h2>Start with the work.<br>Build what fits.</h2></div><div class="large-copy"><p>Some problems live between tools: a scan that needs to become a production order, a shipment that needs to match an invoice, or years of information that need a clearer home.</p><p>Probotz designs and builds operational software, portals and websites around those specific needs. We work through the details, simplify the experience and connect the services it depends on.</p></div></section><section class="section featured-product" id="product"><div class="section-heading"><p class="eyebrow">01 / Our flagship product</p><h2>DentalCharz</h2><p class="hero-text">From impression to invoice, in one connected workflow.</p></div><div class="split-section"><div><p>Dental laboratories coordinate clinics, scans, physical cases, production, manufacturers and deliveries. DentalCharz keeps that work connected, with the commercial and case history alongside it.</p><p>Built by Probotz for the details that generic task tools leave behind.</p><a class="button button-primary" href="/dentalcharz.html">See how DentalCharz works</a></div><div class="outcome-list"><div><strong>Connected intake</strong><span>Clinic requests, scanner files and physical impressions meet in one case.</span></div><div><strong>Production in context</strong><span>People, files, stages and conversations stay with the work.</span></div><div><strong>Through to fulfilment</strong><span>Components, shipping and invoicing follow the case through delivery.</span></div></div></div></section><section class="section"><div class="section-heading"><p class="eyebrow">02 / Customer work</p><h2>A different kind of workflow.</h2></div><div class="work-feature"><figure class="project-image"><img src="/assets/falcon-home.png" width="1440" height="1080" loading="lazy" alt="Falcon website with Finnish navigation, a black and orange archery club identity, and routes to getting started and training."><figcaption>Jousiammuntaseura Falcon · Development-site capture</figcaption></figure><div><p class="eyebrow">Association website · Finland</p><h3 class="feature-title">Jousiammuntaseura Falcon</h3><p>A new website for an established archery association. Clear routes for newcomers and members, with the club's history preserved.</p><p>Information architecture, responsive design, content migration and deployment — a focused project with a practical purpose.</p><a class="button button-secondary" href="/work.html#falcon">Read the case study</a></div></div></section><section class="section process-section" id="workflow"><div class="section-heading"><p class="eyebrow">How we work</p><h2>Understand. Simplify. Build.</h2><p>The scale of the solution changes. The starting point stays the same: understand what people need to do.</p></div><div class="process-grid"><article><span>1</span><h3>Find the awkward parts</h3><p>Understand the current process, the information people need and where handoffs break down.</p></article><article><span>2</span><h3>Make the path clearer</h3><p>Shape the workflow and user experience before adding more complexity.</p></article><article><span>3</span><h3>Build and connect</h3><p>Create the software and integrate external services where they serve the work.</p></article><article><span>4</span><h3>Put it into use</h3><p>Handle deployment and the practical details of running and improving the system.</p></article></div></section><section class="final-cta"><p class="eyebrow">Start with the problem</p><h2>What is harder than it needs to be?</h2><p>Tell us about the workflow, the people involved and the tools you use today.</p><a class="button button-secondary button-large" href="/contact.html">Talk with Probotz</a></section></main>
+  <footer class="site-footer">
+    <div><a class="logo footer-logo" href="/"><span class="logo-mark" aria-hidden="true">P</span><span>Probotz</span></a><p>Probotz Consultancy Oy · Finland<br>Focused software, built around real work.</p></div>
+    <nav aria-label="Footer navigation"><a href="/dentalcharz.html">DentalCharz</a><a href="/work.html">Customer work</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+  </footer>
+</body>
 </html>
