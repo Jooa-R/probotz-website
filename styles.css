@@ -915,3 +915,32 @@ figcaption, .small-note { margin-top: 1rem; color: var(--muted); font-size: 0.85
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Small project portfolio, using the existing surfaces and typography. */
+.home-intro { padding-block: 4.5rem 3rem; }
+.home-intro h1 { max-width: 880px; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 1.06; }
+.home-intro > p:last-child { max-width: 630px; }
+.project-section { padding-block: 3rem; }
+.portfolio-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.portfolio-grid h3 { font-size: clamp(1.6rem, 2.5vw, 2.3rem); }
+.portfolio-grid .flagship-card { padding: clamp(1.5rem, 3vw, 3rem); }
+.portfolio-grid .mini-workflow { margin-block: 2rem; }
+.portfolio-falcon { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.portfolio-falcon .project-image img { border: 0; border-radius: 0; box-shadow: none; }
+.portfolio-copy { padding: 1.5rem; }
+.portfolio-copy h3 { overflow-wrap: anywhere; }
+.portfolio-copy p:not(.eyebrow) { color: var(--muted); }
+.flagship-card a:focus-visible { outline-color: #fff; }
+.home-notes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; padding-block: 3rem 4rem; border-top: 1px solid var(--line); }
+.home-notes h2 { font-size: 1.8rem; }
+.home-notes p { max-width: 600px; color: var(--muted); }
+.compact-intro { padding-block: 4rem 2.5rem; }
+.compact-intro h1 { font-size: clamp(2.3rem, 5vw, 4.8rem); line-height: 1.08; }
+.falcon-project { padding-top: 2.5rem; }
+.falcon-project .case-study-image { margin-left: 0; max-width: 1000px; }
+.project-note { background: var(--soft); }
+@media (max-width: 700px) {
+  .portfolio-grid, .home-notes { grid-template-columns: 1fr; gap: 2rem; }
+  .home-intro { padding-block: 3rem 2rem; }
+  .home-notes { padding-block: 2.5rem; }
+}

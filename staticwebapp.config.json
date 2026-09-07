@@ -2,12 +2,12 @@
   "routes": [
     {
       "route": "/pricing.html",
-      "redirect": "/dentalcharz.html#proposal",
+      "redirect": "/dentalcharz.html#project-status",
       "statusCode": 301
     },
     {
       "route": "/pricing",
-      "redirect": "/dentalcharz.html#proposal",
+      "redirect": "/dentalcharz.html#project-status",
       "statusCode": 301
     },
     {

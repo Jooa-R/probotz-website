@@ -58,7 +58,7 @@ def validate():
     assert locations == expected, 'Sitemap differs from indexable pages'
     config = json.loads((ROOT / 'staticwebapp.config.json').read_text())
     assert config['responseOverrides']['404'] == {'rewrite': '/404.html', 'statusCode': 404}
-    assert any(r.get('redirect') == '/dentalcharz.html#proposal' and r.get('statusCode') == 301 for r in config['routes'])
+    assert any(r.get('redirect') == '/dentalcharz.html#project-status' and r.get('statusCode') == 301 for r in config['routes'])
     print(f'PASS: {len(parsed)} pages, headings, assets, internal links/anchors, canonicals, sitemap and routing configuration')
 
 if __name__ == '__main__':

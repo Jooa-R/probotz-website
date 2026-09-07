@@ -1,50 +1,46 @@
-# Probotz company website
+﻿# Probotz project website
 
-Static HTML/CSS/JavaScript, deployed by the existing Azure Static Web Apps workflow. Probotz Consultancy Oy is the company; DentalCharz is its flagship product; Falcon is customer work.
+Static HTML/CSS/JavaScript, using the existing Probotz palette and components. Probotz Consultancy Oy is a deliberately small home for personal software projects, experiments and infrastructure. DentalCharz is an ongoing side project; Falcon is a goodwill website project for a local club.
 
 ## Edit and preview
 
 - Edit English page content and metadata in `tools/content.en.json`.
-- Edit the shared HTML shell and verified contact configuration in `tools/build.py`.
-- Run `python tools/build.py` (Python standard library only). Commit the generated root HTML files and `sitemap.xml` with the source changes.
-- Run `python -m http.server 4173 --bind 127.0.0.1` and open `http://127.0.0.1:4173`. Root-relative links require HTTP rather than opening files directly.
-- Styles remain in `styles.css`; progressive navigation enhancement is in `script.js`.
+- Edit the shared shell and public email in `tools/build.py`.
+- Run `python tools/build.py`, then commit the generated root HTML and sitemap with the source changes.
+- Preview with `python -m http.server 4173 --bind 127.0.0.1` at `http://127.0.0.1:4173`.
+- Run `python tools/validate.py` and `node --check script.js`.
 
-The English content is separated from the shared shell to support another language later. No Finnish translation or language switcher is implemented. Azure still deploys committed static files with `skip_app_build: true`; there is no Node build or TypeScript project.
+Python uses only the standard library. There is no TypeScript project or Node build. The existing Azure workflow deploys committed static files with `skip_app_build: true`. English content is separated from the shared shell; no Finnish translation is implemented.
 
-## Routes
+## Current structure
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Company homepage; retains the former `#product`, `#workflow` and `#what-we-build` entry points where relevant |
-| `/dentalcharz.html` | Flagship product, six workflow themes, integrations and `#proposal` |
-| `/work.html#falcon` | Falcon customer case study |
-| `/about.html` | Company philosophy and scope |
-| `/contact.html#lab`, `/contact.html#project` | Two enquiry paths |
-| `/privacy.html`, `/terms.html` | Limited publication-status/technical notices, not approved legal documents; noindexed |
-| `/pricing.html` | Azure 301 to `/dentalcharz.html#proposal`; static fallback for simple preview servers |
-| `/404.html` | Custom error page; Azure response override retains HTTP 404 |
+- `/`: short introduction, DentalCharz and Falcon project cards, brief About and email contact.
+- `/dentalcharz.html`: detailed current workflows, illustrative preview, integrations and a development note. DS Core remains explicitly in development.
+- `/work.html#falcon`: concise Falcon portfolio entry, screenshot and external link; retained at the existing URL for compatibility.
+- `/about.html`: short personal description of the company's role alongside the owner's day job.
+- `/contact.html`: casual contact via `jooa@probotz.eu`. Old `#lab` and `#project` fragments remain as compatibility anchors.
+- `/pricing.html` and `/pricing`: Azure 301 to `/dentalcharz.html#project-status`. The HTML fallback also points there. The old product `#proposal` anchor remains beside the development note for existing/cached links, but no proposal offering is presented.
+- `/privacy.html`, `/terms.html`: limited factual/publication-status notices, noindexed; not approved legal documents.
+- `/404.html`: custom Azure error response with HTTP 404 retained.
 
-Canonical URLs, per-page descriptions/titles, Open Graph metadata, social card, favicon, touch icon, robots and sitemap are included. Organisation structured data identifies Probotz; the product page identifies DentalCharz as a SoftwareApplication created by Probotz. No prices, reviews, ratings or certifications are supplied. Azure routing and response overrides follow [Microsoft's configuration documentation](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration). The plain Python preview server does not emulate Azure redirects, response overrides or headers; check those on the deployment preview.
+Navigation is Projects, DentalCharz, About and Contact. DentalCharz login remains on its page and in the footer. Agency/service lists, customer-acquisition copy, qualification prompts and sales CTAs have been removed. Metadata, structured data and the social preview use the same small-project positioning.
 
-## Owner input required before production
+## Assets
 
-1. **Public enquiry email:** no email address was present in repository content or configuration. Set `EMAIL` in `tools/build.py`, then regenerate. Both enquiry paths will receive working mail links with distinct subjects. Until supplied, the page explicitly says direct email enquiries are unavailable. No form backend or guessed address was added.
-2. **Company details:** verify the business ID and registered/public address, plus a phone number only if it should be shown. Currently only the supplied legal company name and Finland are displayed. Add verified details to contact content and structured data as appropriate.
-3. **Approved privacy notice:** supply controller identity/contact, actual hosting and access-log processing, enquiry handling, purposes/legal bases, processors/recipients, transfers, retention, rights and supervisory authority information. Supply or link approved DentalCharz privacy/DPA information separately where applicable. The current technical notice is deliberately incomplete and noindexed.
-4. **Approved terms:** supply the DentalCharz subscription/service terms and any company website or project terms that should be public, with correct contracting company details. No binding clauses have been invented. Replace the publication-status notice and remove `noindex` after approval.
-5. **Hosting privacy review:** repository code contains no analytics, tracking pixels, cookies, local/session storage, forms, embedded third-party media or external fonts. No analytics or cookie banner was added. Hosting/access logs and the separate DentalCharz application cannot be assessed from this marketing repository. Review those when approving the privacy notice and reassess consent if tracking is introduced.
-6. **Falcon launch:** `jousiammuntaseurafalcon.fi` did not resolve from this environment during implementation. Verify DNS, valid HTTPS and that it serves the new site, then replace the launch-status sentence with a visit link in the case study. The Azure development URL is not linked in public site pages.
-7. **DentalCharz proof:** no genuine application screenshots or application source were found. Supply approved, anonymised screenshots to replace the labelled illustrative preview. Product descriptions use the owner's supplied current workflow brief; this repository cannot independently verify application capabilities. Finvoice/Peppol specifics were omitted pending confirmation. DS Core is explicitly in development.
+- `assets/falcon-home.png`: retained real 1440 × 1080 screenshot captured from the supplied development site, `https://zealous-ground-0b3ac8a03.7.azurestaticapps.net/`, during the earlier revision. The standalone project page identifies it as a development capture. Public links now use `https://jousiammuntaseurafalcon.fi/`, as requested by the owner.
+- DentalCharz: retained HTML workflow illustration, explicitly labelled as an illustration rather than an application screenshot. No genuine application screenshots were present in the repository.
+- Icons retain the existing P mark. `assets/social-card.png` now reads “A small home for software projects.”
 
-## Visual assets and provenance
+## Outstanding facts and publication details
 
-- `assets/falcon-home.png`: real 1440 × 1080 browser capture of the supplied Falcon development site, reviewed against its rendered homepage and published bundle. The bundle also confirmed the Finnish navigation and historical document archive. Source: `https://zealous-ground-0b3ac8a03.7.azurestaticapps.net/`. No fake browser frame, customer quote, result metric or commercial detail was added.
-- DentalCharz preview: reuses the existing case/card/step styling with explicitly illustrative, non-personal content. It is labelled as an illustration, not a screenshot.
-- `assets/favicon.svg`, `favicon.png`, `apple-touch-icon.png`, `social-card.png`: rendered from the existing Probotz P mark, palette and typography. No generated photography or external integration logos.
+- Public contact email is supplied and implemented. Business ID and registered address remain unverified and are not invented.
+- Approved privacy/terms text is still needed if those documents are to be published. The website has no analytics, tracking cookies, browser storage or form backend. Hosting/access logs, email handling and the separate DentalCharz application need consideration in approved privacy information.
+- Genuine, anonymised DentalCharz screenshots can replace the illustration when available. Capabilities reflect the owner's supplied brief; this marketing repository does not verify the application implementation. Finvoice/Peppol-specific claims remain omitted.
+- On 2026-09-07, this environment could not resolve Falcon's domain. The owner-requested public link is included, but live availability remains unverified here.
+- On 2026-09-07, `https://probotz.eu/` failed certificate verification. A public HTML fetch with certificate checking bypassed returned Azure's “404 Web Site not found” page. This is an observation from this environment, not a diagnosis of the production configuration. No DNS, hosting or certificate settings were changed.
 
-## Verification
+## Validation and deployment
 
-Run `python tools/build.py`, `python tools/validate.py` and `node --check script.js` for dependency-free checks. Browser verification was performed with installed Edge through temporary Playwright and axe tooling at 375, 768 and 1440 px: all nine pages, images, internal links/anchors, single H1, horizontal overflow, WCAG A/AA checks, mobile navigation, Escape handling and navigation without JavaScript. Automated accessibility checks supplement visual and keyboard checks; they are not a certification.
+Static generation, HTML/link/asset/heading/canonical/sitemap checks and JavaScript syntax checks are available through the commands above. Local browser checks use Edge with temporary Playwright/axe tools at mobile, tablet and desktop widths, including navigation with and without JavaScript. The simple Python server does not emulate Azure redirects, headers or error overrides; those require a deployment smoke check.
 
-No deployment was performed. Live Azure redirects, custom error response and production domain behaviour still need a deployment smoke check.
+This revision is local only; no deployment was performed.

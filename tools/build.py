@@ -10,15 +10,15 @@ import json
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = json.loads((ROOT / 'tools/content.en.json').read_text(encoding='utf-8'))
 ORIGIN = 'https://probotz.eu'
-# TODO(owner): supply verified public contact email, business ID and address.
-EMAIL = None
+# Public contact supplied by the owner. Business ID/address remain unverified.
+EMAIL = 'jooa@probotz.eu'
 
 def link(href, label, kind='secondary'):
     return f'<a class="button button-{kind}" href="{href}">{label}</a>'
 
 def build():
-    nav = [('index.html', 'Home'), ('dentalcharz.html', 'DentalCharz'), ('work.html', 'Work'), ('about.html', 'About'), ('contact.html', 'Contact')]
-    organisation = {'@context': 'https://schema.org', '@type': 'Organization', '@id': ORIGIN + '/#organisation', 'name': 'Probotz Consultancy Oy', 'url': ORIGIN + '/', 'logo': ORIGIN + '/assets/apple-touch-icon.png', 'location': {'@type': 'Country', 'name': 'Finland'}}
+    nav = [('index.html#projects', 'Projects'), ('dentalcharz.html', 'DentalCharz'), ('about.html', 'About'), ('contact.html', 'Contact')]
+    organisation = {'@context': 'https://schema.org', '@type': 'Organization', '@id': ORIGIN + '/#organisation', 'name': 'Probotz Consultancy Oy', 'url': ORIGIN + '/', 'email': EMAIL, 'logo': ORIGIN + '/assets/apple-touch-icon.png', 'location': {'@type': 'Country', 'name': 'Finland'}}
     for filename, page in CONTENT.items():
         canonical = ORIGIN + ('/' if filename == 'index.html' else '/' + filename)
         navigation = ''.join(f'<a href="/{path}"' + (' aria-current="page"' if filename == path else '') + f'>{label}</a>' for path, label in nav)
@@ -27,13 +27,7 @@ def build():
             metadata = {'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'name': 'DentalCharz', 'applicationCategory': 'BusinessApplication', 'operatingSystem': 'Web browser', 'url': canonical, 'description': page['description'], 'creator': {'@id': ORIGIN + '/#organisation', '@type': 'Organization', 'name': 'Probotz Consultancy Oy'}}
         robots = '<meta name="robots" content="noindex, follow">' if page.get('noindex') else ''
         body = page['body']
-        for topic, subject in [('lab', 'DentalCharz enquiry'), ('project', 'Software project enquiry')]:
-            if EMAIL:
-                from urllib.parse import quote
-                contact = link('mailto:' + html.escape(EMAIL) + '?subject=' + quote(subject), 'Email Probotz', 'primary')
-            else:
-                contact = '<p class="contact-status">Direct email enquiries are not available on this website yet.</p><!-- TODO(owner): add verified public enquiry email in tools/build.py. -->'
-            body = body.replace('{{contact_' + topic + '}}', contact)
+        body = body.replace('{{email_link}}', f'<a class="text-link" href="mailto:{html.escape(EMAIL)}">{html.escape(EMAIL)}</a>')
         output = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -51,7 +45,7 @@ def build():
   <meta property="og:image" content="{ORIGIN}/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Probotz Consultancy Oy — focused software, built around real work">
+  <meta property="og:image:alt" content="Probotz Consultancy Oy — a small home for software projects">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#315f58">
 {robots}
@@ -67,12 +61,12 @@ def build():
   <header class="site-header">
     <a class="logo" href="/" aria-label="Probotz home"><span class="logo-mark" aria-hidden="true">P</span><span>Probotz</span></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open navigation</span><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav" aria-label="Main navigation">{navigation}<a class="button button-ghost login-link" href="https://dental.probotz.eu/login">DentalCharz login</a></nav>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">{navigation}</nav>
   </header>
   <main id="main" tabindex="-1">{body}</main>
   <footer class="site-footer">
-    <div><a class="logo footer-logo" href="/"><span class="logo-mark" aria-hidden="true">P</span><span>Probotz</span></a><p>Probotz Consultancy Oy · Finland<br>Focused software, built around real work.</p></div>
-    <nav aria-label="Footer navigation"><a href="/dentalcharz.html">DentalCharz</a><a href="/work.html">Customer work</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+    <div><a class="logo footer-logo" href="/"><span class="logo-mark" aria-hidden="true">P</span><span>Probotz</span></a><p>Probotz Consultancy Oy · Finland<br>A small home for software projects.</p></div>
+    <nav aria-label="Footer navigation"><a href="/index.html#projects">Projects</a><a href="https://dental.probotz.eu/login">DentalCharz login</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
   </footer>
 </body>
 </html>
